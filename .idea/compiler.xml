@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="GemoTestNG" target="1.5" />
+      <module name="GemoTestNG" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

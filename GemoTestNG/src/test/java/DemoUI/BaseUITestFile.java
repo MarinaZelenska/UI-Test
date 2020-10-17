@@ -8,8 +8,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class BaseUITestFile {
-    WebDriver driver;
-    WebDriverWait wait;
+    public WebDriver driver;
+    public WebDriverWait wait;
+    public String url = "https://rozetka.com.ua/";
 
     @BeforeClass
     public void setupDriver(){
