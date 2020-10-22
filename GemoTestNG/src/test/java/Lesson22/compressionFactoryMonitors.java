@@ -1,21 +1,22 @@
 package Lesson22;
 
 import DemoUI.BaseUITestFile;
+import Factorypages.pages.CompareProductPageFactory;
+import Factorypages.pages.DetailProductPageFactory;
+import Factorypages.pages.HomePageRozetkaFactory;
+import Factorypages.pages.ProductGridRozetkaFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.Test;
 import pages.CompareProductPage;
 import pages.DetailProductPage;
 import pages.HomePageRozetka;
 import pages.ProductGridRozetka;
 
-import java.util.List;
-
 import static org.testng.Assert.assertEquals;
 
-public class compressionMonitors extends BaseUITestFile {
+public class compressionFactoryMonitors extends BaseUITestFile {
 
 
 
@@ -27,17 +28,17 @@ public class compressionMonitors extends BaseUITestFile {
         driver.get(url);
 
 
-        HomePageRozetka homePageRozetka = new HomePageRozetka(driver);
+        HomePageRozetkaFactory homePageRozetka = new HomePageRozetkaFactory(driver);
         homePageRozetka.waitSelectCategoryInMenu();
         homePageRozetka.hoverElement();
         homePageRozetka.waitProductInCategory();
         homePageRozetka.selectSubCategory();
 
-        ProductGridRozetka productGridRozetka = new ProductGridRozetka(driver);
+        ProductGridRozetkaFactory productGridRozetka = new ProductGridRozetkaFactory(driver);
         productGridRozetka.waitProductImage();
         productGridRozetka.findSuitablePrice(3000);
 
-        DetailProductPage detailProductPage = new DetailProductPage(driver);
+        DetailProductPageFactory detailProductPage = new DetailProductPageFactory(driver);
         detailProductPage.waitTabOnDetailPage();
         detailProductPage.waitCompareIcon();
         detailProductPage.clickCompareIcon();
@@ -66,7 +67,7 @@ public class compressionMonitors extends BaseUITestFile {
         detailProductPage.checkCountMonitorsInCompareMenu();
         detailProductPage.clickLinkForRedirectOnDetailComparePage();
 
-        CompareProductPage compareProductPage = new CompareProductPage(driver);
+        CompareProductPageFactory compareProductPage = new CompareProductPageFactory(driver);
         compareProductPage.waitImageComparePage();
 
 
@@ -77,6 +78,9 @@ public class compressionMonitors extends BaseUITestFile {
 
 
         String nameComparePage1 = productGridRozetka.selectPageCompareFirstName();
+
+
+
 
 
         String priceInCompareMenusecond = productGridRozetka.selectPriceInCompareMenuSecond();

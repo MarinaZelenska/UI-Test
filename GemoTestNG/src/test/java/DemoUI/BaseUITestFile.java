@@ -20,8 +20,12 @@ public class BaseUITestFile {
 
     }
 
+
+
     @AfterClass
     public void closeDriver(){
         driver.quit();
     }
+
+
 }

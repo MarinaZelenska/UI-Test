@@ -1,6 +1,8 @@
 package Lesson22;
 
 import DemoUI.BaseUITestFile;
+import Factorypages.pages.HomePageRozetkaFactory;
+import Factorypages.pages.ProductGridRozetkaFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -12,7 +14,7 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class filtersTest extends BaseUITestFile {
+public class filtersTestFactory extends BaseUITestFile {
 
 
     @Test
@@ -20,11 +22,11 @@ public class filtersTest extends BaseUITestFile {
         driver.manage().window().maximize();
         driver.get(url);
 
-        HomePageRozetka homePageRozetka = new HomePageRozetka(driver);
+        HomePageRozetkaFactory homePageRozetka = new HomePageRozetkaFactory(driver);
         homePageRozetka.searchQuery("samsung");
 
 
-        ProductGridRozetka productGridRozetka = new ProductGridRozetka(driver);
+        ProductGridRozetkaFactory productGridRozetka = new ProductGridRozetkaFactory(driver);
         productGridRozetka.waitCheckboxCategoryforFilter();
         productGridRozetka.clickCheckboxCategoryforFilter();
         productGridRozetka.waitAppleElement();
@@ -43,10 +45,10 @@ public class filtersTest extends BaseUITestFile {
     public void positiveSelectPriceTest() {
         driver.manage().window().maximize();
         driver.get(url);
-        HomePageRozetka homePageRozetka = new HomePageRozetka(driver);
+        HomePageRozetkaFactory homePageRozetka = new HomePageRozetkaFactory(driver);
         homePageRozetka.searchQuery("samsung");
 
-        ProductGridRozetka productGridRozetka = new ProductGridRozetka(driver);
+        ProductGridRozetkaFactory productGridRozetka = new ProductGridRozetkaFactory(driver);
         productGridRozetka.waitCheckboxCategoryforFilter();
         productGridRozetka.clickCheckboxCategoryforFilter();
         productGridRozetka.waitDownloadImage();
@@ -78,10 +80,10 @@ public class filtersTest extends BaseUITestFile {
     public void positiveSelectSeriesTest() {
         driver.manage().window().maximize();
         driver.get(url);
-        HomePageRozetka homePageRozetka = new HomePageRozetka(driver);
+        HomePageRozetkaFactory homePageRozetka = new HomePageRozetkaFactory(driver);
         homePageRozetka.searchQuery("samsung");
 
-        ProductGridRozetka productGridRozetka = new ProductGridRozetka(driver);
+        ProductGridRozetkaFactory productGridRozetka = new ProductGridRozetkaFactory(driver);
         productGridRozetka.waitCheckboxCategoryforFilter();
         productGridRozetka.clickCheckboxCategoryforFilter();
         productGridRozetka.waitDownloadImage();
